@@ -1,5 +1,5 @@
 param (
-    [string]$target = "google.com"
+    [string]$target = "google.com",
     [int]$count = 900
 )
 
