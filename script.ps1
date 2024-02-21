@@ -61,16 +61,12 @@ try {
     Write-Host "Total timeouts: $totalTimeouts"
     Write-Host " "
     Write-Host "== All Timeouts: =="
-
-    # Print array of timestamps for timeouts
     foreach ($timeout in $allTimeouts) {
         Write-Output $timeout
         Write-Host $timeout
     }
     Write-Output "==================="
     Write-Host "==================="
-
-
 
     # Wait for key press to prevent premature exit
     Write-Host "Press any key to exit..."
