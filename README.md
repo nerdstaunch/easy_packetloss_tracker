@@ -1,4 +1,4 @@
-# Easy Packet Loss Tracket
+# Easy Packet Loss Tracker
 
 ## Overview
 This PowerShell script helps you monitor packet loss on your network by continuously pinging a specified target (website or IP address) and providing real-time updates on successful responses and timeouts.
