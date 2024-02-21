@@ -8,6 +8,7 @@ $timeoutCount = 0
 $processed = 0
 
 $allTimeouts = @() 
+$start = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
 $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
 Write-Host "$timestamp - Pinging $target ..."
 
@@ -38,6 +39,8 @@ try {
     $packetLoss = ($timeoutCount / $processed) * 100
     $totalTimeouts = $timeoutCount
     Write-Host "===== Summary ====="
+    Write-Host "From: $start || To: $timestamp"
+    Write-Host "Total Packets sent: $processed"
     Write-Host "Packet loss: $packetLoss%"
     Write-Host "Total timeouts: $totalTimeouts"
     Write-Host "==================="
