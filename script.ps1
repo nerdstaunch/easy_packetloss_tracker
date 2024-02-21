@@ -1,8 +1,8 @@
 param (
     [string]$target = "google.com"
+    [int]$count = 900
 )
 
-$count = 900 
 $successCount = 0
 $timeoutCount = 0
 $processed = 0
