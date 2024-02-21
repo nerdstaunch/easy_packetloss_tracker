@@ -17,4 +17,5 @@ The script accepts the following parameters:
    ```powershell
    .\script.ps1 -target "example.com" -count 1000
 5. Log to a file with:
-.\script.ps1 > output.txt
+    ```powershell
+    .\script.ps1 > output.txt
