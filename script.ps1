@@ -36,17 +36,17 @@ try {
         Start-Sleep -Seconds 1  # Pause for 1 second
     }
 } finally {
-    $packetLoss = ($timeoutCount / $processed) * 100
+    $packetLoss = [Math]::Round(($timeoutCount / $processed) * 100, 2)
     $totalTimeouts = $timeoutCount
+    Write-Host " "
     Write-Host "===== Summary ====="
     Write-Host "From: $start || To: $timestamp"
     Write-Host "Total Packets sent: $processed"
     Write-Host "Packet loss: $packetLoss%"
     Write-Host "Total timeouts: $totalTimeouts"
-    Write-Host "==================="
-
+    Write-Host " "
+    Write-Host "== All Timeouts: =="
     # Print array of timestamps for timeouts
-    Write-Host "All Timeouts:"
     foreach ($timeout in $allTimeouts) {
         Write-Host $timeout
     }
