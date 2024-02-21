@@ -6,8 +6,8 @@ This PowerShell script helps you monitor packet loss on your network by continuo
 ## Parameters
 The script accepts the following parameters:
 
-- **target**: Specifies the target website or IP address to ping. Defaults to "google.com" if not specified.
-- **count**: Specifies the number of times to ping the target. Defaults to 900 if not specified.
+- **-target**: Specifies the target website or IP address to ping. Defaults to "google.com" if not specified.
+- **-count**: Specifies the number of times to ping the target. Defaults to 900 if not specified.
 
 ## Usage
 1. Download or clone the script to your local machine.
