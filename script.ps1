@@ -1,5 +1,5 @@
 param (
-    [string]$target = "sdsaasdsa.com",
+    [string]$target = "google.com",
     [int]$count = 900,
     [scriptblock]$OnFailure
 )
