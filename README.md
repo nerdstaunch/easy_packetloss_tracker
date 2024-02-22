@@ -19,3 +19,22 @@ The script accepts the following parameters:
 5. Log to a file with:
     ```powershell
     .\script.ps1 > output.txt
+
+## Output
+Please see example_output.txt for a full example run.
+
+At the end of the execution you will get a summary:
+   ```
+   ===== Summary =====
+   From: 2024-02-22 10:11:42 || To: 2024-02-22 10:28:57
+   Total Packets sent: 900
+   Packet loss: 3.11%
+   Total timeouts: 28
+   
+   == All Timeouts: ==
+   [18/900] 2024-02-22 10:12:00
+   [29/900] 2024-02-22 10:12:15
+   ...
+   [866/900] 2024-02-22 10:28:14
+   [867/900] 2024-02-22 10:28:19
+   ===================
