@@ -8,6 +8,8 @@ The script accepts the following parameters:
 
 - **-target**: Specifies the target website or IP address to ping. Defaults to "google.com" if not specified.
 - **-count**: Specifies the number of times to ping the target. Defaults to 900 if not specified.
+- **-OnFailure** (scriptblock, optional): A script block to execute when a ping attempt fails (i.e., when a timeout occurs). This script block will be executed in the context of the script. If not provided, no action will be taken on failure.
+
 
 ## Usage
 1. Download or clone the script to your local machine.
@@ -15,7 +17,7 @@ The script accepts the following parameters:
 3. Navigate to the directory where the script is located.
 4. Run the script with optional parameters:
    ```powershell
-   .\script.ps1 -target "example.com" -count 1000
+   .\script.ps1 -target "example.com" -count 1000 -OnFailure $failureAction
 5. Log to a file with:
     ```powershell
     .\script.ps1 > output.txt

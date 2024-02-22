@@ -1,6 +1,7 @@
 param (
-    [string]$target = "google.com",
-    [int]$count = 900
+    [string]$target = "sdsaasdsa.com",
+    [int]$count = 900,
+    [scriptblock]$OnFailure
 )
 
 $successCount = 0
@@ -27,15 +28,23 @@ try {
             } else {
                 $timeoutCount++
                 Write-Output "[$($processed+1)/$count] $timestamp - Request timed out"
-                Write-Host "[$($processed+1)/$count] $timestamp - Request timed out"
+                Write-Host "[$($processed+1)/$count] $timestamp - Request timed out" -ForegroundColor Red
                 $allTimeouts += "[$($processed+1)/$count] $timestamp"  # Add timestamp to array
+
+                if ($OnFailure) {
+                    Invoke-Command -ScriptBlock $OnFailure
+                }
             }
         } else {
             $timeoutCount++
             Write-Output "[$($processed+1)/$count] $timestamp - Request timed out."
-            Write-Host "[$($processed+1)/$count] $timestamp - Request timed out."
+            Write-Host "[$($processed+1)/$count] $timestamp - Request timed out." -ForegroundColor Red
 
             $allTimeouts += "[$($processed+1)/$count] $timestamp"  # Add timestamp to array
+
+            if ($OnFailure) {
+                Invoke-Command -ScriptBlock $OnFailure
+            }
         }
 
         Start-Sleep -Seconds 1  # Pause for 1 second
